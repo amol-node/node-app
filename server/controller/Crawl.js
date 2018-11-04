@@ -16,10 +16,11 @@ function getCrawlPage(req, res) {
     let strUrl;
     if(req && req.query && !req.query.url) {
         let response = {message: "Query string url is required"};
-        res.send(response);
+        res.status(200).json(response);
         return;
     } else {
         strUrl = req.query.url;
+        //Validation code here
     }
     crawler.crawl({
         url: strUrl,

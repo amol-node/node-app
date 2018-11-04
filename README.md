@@ -21,3 +21,7 @@ npm run test
 
 Start process using pm2:
 pm2 start process.json
+
+
+Access url:
+http:<host>:<port>/api/crwal?url=https://google.com

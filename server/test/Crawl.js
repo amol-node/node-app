@@ -26,10 +26,10 @@ describe('Crawl', () => {
   describe('/GET crawl', () => {
       it('it should not GET a crawl without query string url  field', (done) => {
             chai.request(server)
-            .get('/api/crawl?url=')
+            .get('/api/crwal?url=')
             .end((err, res) => {
-                  res.should.have.status(404);
-                  //res.should.have.property('message').eql('Query string url is required');
+                  res.should.have.status(200);
+                  res.body.should.have.property('message').eql('Query string url is required');
               done();
             });
       });
