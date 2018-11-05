@@ -24,4 +24,4 @@ pm2 start process.json
 
 
 Access url:
-http:<host>:<port>/api/crwal?url=https://google.com
+http://localhost:3005/api/crwal?url=https://google.com
