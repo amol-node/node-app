@@ -14,7 +14,7 @@ describe('Crawl', () => {
   describe('/GET Crawl', () => {
       it('it should GET crawl page', (done) => {
             chai.request(server)
-            .get('/api/crwal?url=https://wiprodigital.com')
+            .get('/api/crawl?url=https://wiprodigital.com')
             .end((err, res) => {
                   res.should.have.status(200);
                   res.body.should.be.a('object');
@@ -26,7 +26,7 @@ describe('Crawl', () => {
   describe('/GET crawl', () => {
       it('it should not GET a crawl without query string url  field', (done) => {
             chai.request(server)
-            .get('/api/crwal?url=')
+            .get('/api/crawl?url=')
             .end((err, res) => {
                   res.should.have.status(200);
                   res.body.should.have.property('message').eql('Query string url is required');

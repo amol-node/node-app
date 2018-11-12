@@ -36,7 +36,7 @@ function getCrawlPage(req, res) {
                     arrReport["pages"].push(url);
                 }
                 }
-                console.log("Links = " + url);
+                //console.log("Links = " + url);
                 //c.queue(url);
             });
             $("i").each(function(item,a) {
@@ -44,7 +44,7 @@ function getCrawlPage(req, res) {
                 let url = a.parent.attribs.href;
                 if(url != undefined) {
                 arrReport["images"].push(url);
-                console.log(" Img =  " + url);
+                //console.log(" Img =  " + url);
                 //c.queue(url);
                 }
             });
@@ -56,7 +56,7 @@ function getCrawlPage(req, res) {
             //console.log(arrUrl);
             let response = {message: "Crawl done.", "allUrls" : getUnique(arrUrl), "uniquePags":getUnique(arrReport.pages) ,  "image": getUnique(arrReport.images)
                               , "social" : getUnique(arrReport.social)};
-            console.log("Result " + response);
+            //console.log("Result " + response);
             res.send(response);
         }
     });
